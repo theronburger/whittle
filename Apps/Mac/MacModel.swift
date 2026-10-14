@@ -39,6 +39,11 @@ final class MacModel {
             identity.name = name
             identity.hosts = Self.localHosts()
             ticket = identity
+            #if DEBUG
+            print("Whittle pairing fingerprint: \(ticket.fingerprint)")
+            print("Whittle Screen Recording permission: \(CGPreflightScreenCaptureAccess())")
+            fflush(stdout)
+            #endif
             try PairingVault.save(ticket)
             if let data = try? Data(contentsOf: root.appendingPathComponent("export-receipts.json")) {
                 completedExports = (try? JSONDecoder().decode([UUID].self, from: data)) ?? []
@@ -48,12 +53,17 @@ final class MacModel {
     }
 
     func startListening() {
+        guard !AppDirectories.isTesting else { return }
         listener?.cancel()
         do {
             let listener = try NWListener(using: PeerSecurity.parameters(for: ticket), on: .init(rawValue: ticket.port)!)
             self.listener = listener
             listener.service = .init(name: ticket.serviceName, type: "_whittle._tcp")
             listener.stateUpdateHandler = { [weak self] state in
+                #if DEBUG
+                print("Whittle listener: \(state)")
+                fflush(stdout)
+                #endif
                 Task { @MainActor in
                     guard let self else { return }
                     switch state {

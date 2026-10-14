@@ -60,8 +60,12 @@ struct MacSettingsView: View {
                     DisclosureGroup("Connection details") {
                         VStack(alignment: .leading, spacing: 8) {
                             Text(model.connectionDetail.isEmpty ? "Local encrypted connection" : model.connectionDetail)
+                            Text("Pairing fingerprint: \(model.ticket.fingerprint)").textSelection(.enabled)
                             ForEach(model.ticket.hosts, id: \.self) { Text("\($0):\(model.ticket.port)").textSelection(.enabled) }
-                            Text("If a VPN blocks pairing, allow local network access in its settings. Your iPad also needs Local Network permission for Whittle.").foregroundStyle(.secondary)
+                            Text("Allow Whittle in Local Network privacy settings and in the Mac’s Firewall options. If you use a VPN, allow local network access there too.").foregroundStyle(.secondary)
+                            Button("Network Settings…") {
+                                NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.Network-Settings.extension")!)
+                            }
                             Button("Restart Connection") { model.startListening() }
                             Button("Reset Pairing…", role: .destructive) { showingReset = true }
                         }.font(.caption).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 8)

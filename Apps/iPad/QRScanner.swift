@@ -18,12 +18,15 @@ final class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsD
     private let onCode: (String) -> Void
     private var delivered = false
     private var stopped = false
+    private var previousIdleTimerDisabled = false
 
     init(onCode: @escaping (String) -> Void) { self.onCode = onCode; super.init(nibName: nil, bundle: nil) }
     required init?(coder: NSCoder) { fatalError("init(coder:) is unavailable") }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        previousIdleTimerDisabled = UIApplication.shared.isIdleTimerDisabled
+        UIApplication.shared.isIdleTimerDisabled = true
         view.backgroundColor = .black
         Task {
             let authorized = await AVCaptureDevice.requestAccess(for: .video)
@@ -68,7 +71,9 @@ final class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsD
     }
 
     func stop() {
+        guard !stopped else { return }
         stopped = true
+        UIApplication.shared.isIdleTimerDisabled = previousIdleTimerDisabled
         rotationObservation = nil
         let session = session
         queue.async { session.stopRunning() }

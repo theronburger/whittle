@@ -1,6 +1,23 @@
 import XCTest
+import UIKit
+import WhittleCore
 
 final class AnnotationFlowTests: XCTestCase {
+    @MainActor
+    func testPairingCodeWorksWithoutOpeningCamera() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["--ui-testing"]
+        app.launch()
+        app.buttons["connectionSettings"].tap()
+        let ticket = try PairingTicket(name: "Code-paired Mac", hosts: ["127.0.0.1"])
+        UIPasteboard.general.string = ticket.code
+        app.buttons["Paste"].tap()
+        app.buttons["pairMac"].tap()
+        app.buttons["connectionSettings"].tap()
+        XCTAssertTrue(app.staticTexts["Code-paired Mac"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.navigationBars["Scan Your Mac’s Code"].exists)
+    }
+
     @MainActor
     func testDragNoteEditAndQueueFeedback() {
         let app = XCUIApplication()

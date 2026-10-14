@@ -40,6 +40,7 @@
 		8CCDAA76DD2EA910D0E5156F /* MacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC8F6ADDEAF3A9A5FF0FB8 /* MacModel.swift */; };
 		8CFB2FFD8289375A5B8162FF /* ScreenshotLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */; };
 		90B1CCC2DD424DCE148F0993 /* PairingVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803BC60A5C1F41D4A2D5C7AA /* PairingVault.swift */; };
+		9C20D7AEA0E6E01A26F2A052 /* WhittleCore in Frameworks */ = {isa = PBXBuildFile; productRef = 78B10FBC86817F2C27458D57 /* WhittleCore */; };
 		9D9FEEBDC0615A8810397E90 /* WhittleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D7A35DD1FC01A28A21E863 /* WhittleTheme.swift */; };
 		9F4F3B118A2E26EEFCCDA956 /* NoteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B922E5EAD21DF7993BDEC /* NoteEditor.swift */; };
 		A029CF2BF9000E2688B74D45 /* WhittleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D7A35DD1FC01A28A21E863 /* WhittleTheme.swift */; };
@@ -155,6 +156,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E665A1705DD42A298577D532 /* WhittleCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC4BD8E00BD8A8327AF6A8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C20D7AEA0E6E01A26F2A052 /* WhittleCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +403,7 @@
 			buildConfigurationList = 6CD6FC9F569EAC4318DEC5CB /* Build configuration list for PBXNativeTarget "WhittlePadUITests" */;
 			buildPhases = (
 				C9B62C60515BA10CC44B6C58 /* Sources */,
+				DCC4BD8E00BD8A8327AF6A8D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -402,6 +412,7 @@
 			);
 			name = WhittlePadUITests;
 			packageProductDependencies = (
+				78B10FBC86817F2C27458D57 /* WhittleCore */,
 			);
 			productName = WhittlePadUITests;
 			productReference = 92AF4113A16F6A1BFD839E5E /* WhittlePadUITests.xctest */;
@@ -1058,6 +1069,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 472156FC56FBE7BEF99C4F47 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		78B10FBC86817F2C27458D57 /* WhittleCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WhittleCore;
 		};
 		7DCD93F04DAA350C601304C0 /* KeyboardShortcuts */ = {
 			isa = XCSwiftPackageProductDependency;

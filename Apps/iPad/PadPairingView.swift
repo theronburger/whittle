@@ -6,7 +6,6 @@ struct PadPairingView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var code = ""
     @State private var address = ""
-    @State private var scanning = false
     @State private var confirmingForget = false
 
     var body: some View {
@@ -22,8 +21,13 @@ struct PadPairingView: View {
                     }
                     if model.ticket != nil {
                         Button("Reconnect", systemImage: "arrow.clockwise") { model.reconnect() }.buttonStyle(.borderedProminent)
+                        if !model.connected {
+                            Text("On your Mac, allow Whittle in Local Network privacy settings and Firewall options. A VPN may also need to allow local network access.")
+                                .font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        }
                         DisclosureGroup("Connect using an address") {
                             VStack(alignment: .leading, spacing: 12) {
+                                if let ticket = model.ticket { Text("Pairing fingerprint: \(ticket.fingerprint)").font(.caption.monospaced()) }
                                 Text("Enter an address from Connection Details in Whittle on your Mac.").font(.caption).foregroundStyle(.secondary)
                                 TextField("Mac IP address or hostname", text: $address).textInputAutocapitalization(.never).autocorrectionDisabled().textFieldStyle(.roundedBorder)
                                 Button("Use Address") { model.useAddress(address) }.disabled(address.trimmingCharacters(in: .whitespaces).isEmpty)
@@ -31,7 +35,7 @@ struct PadPairingView: View {
                         }
                         Divider()
                     }
-                    Button { scanning = true } label: {
+                    Button { model.scanning = true } label: {
                         Label(model.ticket == nil ? "Scan Pairing Code" : "Scan Another Code", systemImage: "qrcode.viewfinder").frame(maxWidth: .infinity).padding(8)
                     }.buttonStyle(.borderedProminent).controlSize(.large)
                     VStack(alignment: .leading, spacing: 12) {
@@ -55,14 +59,12 @@ struct PadPairingView: View {
             .navigationTitle("Pairing")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
-        }
-        .sheet(isPresented: $scanning) {
-            NavigationStack {
-                QRScanner { code in scanning = false; model.pair(code: code) }
+            .navigationDestination(isPresented: $model.scanning) {
+                QRScanner { code in model.scanning = false; model.pair(code: code) }
                     .ignoresSafeArea(edges: .bottom)
                     .navigationTitle("Scan Your Mac’s Code")
                     .navigationBarTitleDisplayMode(.inline)
-                    .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { scanning = false } } }
+                    .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Cancel") { model.scanning = false } } }
             }
         }
         .confirmationDialog("Forget this Mac? Your saved annotations stay on the iPad.", isPresented: $confirmingForget) {

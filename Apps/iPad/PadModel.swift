@@ -13,6 +13,7 @@ final class PadModel {
     private(set) var copyStatus: String?
     var error: String?
     var showingPairing = false
+    var scanning = false
     private var peer: PeerConnection?
     private var browser: NWBrowser?
     private var retry: Task<Void, Never>?
@@ -38,14 +39,23 @@ final class PadModel {
             if AppDirectories.isUITesting { try library.receive(DemoScreenshot.record()) }
         } else {
             ticket = try PairingVault.load()
+            #if DEBUG
+            print("Whittle pairing fingerprint: \(ticket?.fingerprint ?? "unpaired")")
+            fflush(stdout)
+            #endif
             if ticket != nil { beginDiscovery(); connect() } else { showingPairing = true }
         }
         library.onEdit = { [weak self] _ in self?.scheduleSync() }
     }
 
     func pair(code: String) {
+        scanning = false
         do {
             let ticket = try PairingTicket(code: code)
+            #if DEBUG
+            print("Whittle pairing code accepted: \(ticket.fingerprint)")
+            fflush(stdout)
+            #endif
             try PairingVault.save(ticket)
             self.ticket = ticket
             attempts = 0; candidateIndex = 0; discoveredEndpoint = nil
@@ -108,7 +118,7 @@ final class PadModel {
 
     private func beginDiscovery() {
         browser?.cancel()
-        guard let ticket, active else { return }
+        guard !AppDirectories.isTesting, let ticket, active else { return }
         let parameters = NWParameters.tcp
         parameters.includePeerToPeer = true
         let browser = NWBrowser(for: .bonjour(type: "_whittle._tcp", domain: nil), using: parameters)
@@ -121,19 +131,19 @@ final class PadModel {
             Task { @MainActor in
                 guard let self, self.ticket?.hostID == ticket.hostID else { return }
                 self.discoveredEndpoint = endpoint
-                if endpoint != nil && !self.connected { self.connect() }
+                if endpoint != nil && self.peer == nil { self.connect() }
             }
         }
         browser.stateUpdateHandler = { [weak self] state in
             if case .waiting(let error) = state {
-                Task { @MainActor in self?.connectionText = "Discovery unavailable: \(error.localizedDescription)" }
+                Task { @MainActor in if self?.connected == false { self?.connectionText = "Discovery unavailable: \(error.localizedDescription)" } }
             }
         }
         browser.start(queue: DispatchQueue(label: "app.whittle.discovery"))
     }
 
     private func connect() {
-        guard active, let ticket else { return }
+        guard !AppDirectories.isTesting, active, let ticket else { return }
         stopConnection()
         remoteIDs.removeAll()
         connectionText = "Connecting to \(ticket.name)…"

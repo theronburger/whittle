@@ -114,6 +114,7 @@ targets:
     sources: Tests/iPadUI
     dependencies:
       - target: WhittlePad
+      - package: WhittleCore
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES

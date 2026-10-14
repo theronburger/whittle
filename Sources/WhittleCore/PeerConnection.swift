@@ -39,7 +39,8 @@ public final class PeerConnection: @unchecked Sendable {
         connection.stateUpdateHandler = { [weak self] state in
             guard let self else { return }
             #if DEBUG
-            print("Whittle connection: \(state)")
+            print("Whittle connection to \(self.connection.endpoint): \(state), path: \(String(describing: self.connection.currentPath))")
+            fflush(stdout)
             #endif
             self.onState?(state)
             if case .ready = state { self.receiveHeader() }
@@ -55,9 +56,9 @@ public final class PeerConnection: @unchecked Sendable {
     }
 
     public func cancel() {
-        queue.async { [weak self] in
-            self?.stopped = true
-            self?.connection.cancel()
+        queue.async {
+            self.stopped = true
+            self.connection.cancel()
         }
     }
 

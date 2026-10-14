@@ -1,3 +1,4 @@
+import CryptoKit
 import Foundation
 import Security
 
@@ -23,6 +24,7 @@ public struct PairingTicket: Codable, Equatable, Sendable {
     }
 
     public var serviceName: String { "Whittle-" + hostID.uuidString }
+    public var fingerprint: String { SHA256.hash(data: secret).prefix(6).map { String(format: "%02x", $0) }.joined(separator: ":") }
 
     public func validate() throws {
         guard secret.count == 32, port > 0, !hosts.isEmpty, hosts.count <= 20,

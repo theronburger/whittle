@@ -10,6 +10,7 @@ enum PairingVault {
     }
 
     static func load() throws -> PairingTicket? {
+        guard !AppDirectories.isTesting else { return nil }
         var request = query
         request[kSecReturnData as String] = true
         var item: CFTypeRef?
@@ -22,6 +23,7 @@ enum PairingVault {
     }
 
     static func save(_ ticket: PairingTicket) throws {
+        guard !AppDirectories.isTesting else { return }
         try ticket.validate()
         let data = try JSONEncoder().encode(ticket)
         let status = SecItemUpdate(query as CFDictionary, [kSecValueData as String: data] as CFDictionary)
@@ -35,6 +37,7 @@ enum PairingVault {
     }
 
     static func remove() throws {
+        guard !AppDirectories.isTesting else { return }
         let status = SecItemDelete(query as CFDictionary)
         guard status == errSecSuccess || status == errSecItemNotFound else { throw vaultError(status) }
     }

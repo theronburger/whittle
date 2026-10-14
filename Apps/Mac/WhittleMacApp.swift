@@ -9,7 +9,7 @@ struct WhittleMacApp: App {
     private let showSettingsOnLaunch: Bool
 
     init() {
-        showSettingsOnLaunch = AppDirectories.isUITesting || !UserDefaults.standard.bool(forKey: "hasLaunched")
+        showSettingsOnLaunch = AppDirectories.isUITesting || ProcessInfo.processInfo.arguments.contains("--show-settings") || !UserDefaults.standard.bool(forKey: "hasLaunched")
         if !AppDirectories.isTesting { UserDefaults.standard.set(true, forKey: "hasLaunched") }
         do {
             let model = try MacModel()
