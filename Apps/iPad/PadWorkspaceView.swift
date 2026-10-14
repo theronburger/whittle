@@ -138,11 +138,9 @@ struct PadWorkspaceView: View {
                 ForEach([2.0, 4.0, 8.0], id: \.self) { width in Button("\(Int(width)) pt") { controller.lineWidth = width } }
             } label: { Circle().fill(controller.color.color).frame(width: 22, height: 22).frame(width: 42, height: 48) }
                 .accessibilityLabel("Ink Color and Width")
-            Button { controller.flushInk(); model.library.undo() } label: { Image(systemName: "arrow.uturn.backward").frame(width: 42, height: 48) }
-                .contentShape(Rectangle())
+            Button { controller.flushInk(); model.library.undo() } label: { Image(systemName: "arrow.uturn.backward").frame(width: 42, height: 48).contentShape(Rectangle()) }
                 .disabled(!model.library.canUndo).accessibilityLabel("Undo").accessibilityIdentifier("undo")
-            Button { controller.flushInk(); model.library.redo() } label: { Image(systemName: "arrow.uturn.forward").frame(width: 42, height: 48) }
-                .contentShape(Rectangle())
+            Button { controller.flushInk(); model.library.redo() } label: { Image(systemName: "arrow.uturn.forward").frame(width: 42, height: 48).contentShape(Rectangle()) }
                 .disabled(!model.library.canRedo).accessibilityLabel("Redo")
             Menu {
                 Toggle("Draw with Finger", isOn: $controller.drawWithFinger)
