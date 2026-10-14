@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02DB0495D639BAC593A6E45C /* ScreenshotLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7383FE4E60D5655C88D7914 /* ScreenshotLibraryTests.swift */; };
 		07BF0A97E6F1F1AD68FAAF3C /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCF49E09381A40F02ADF98 /* CanvasController.swift */; };
 		0E13E9D2AB43BAB2D0BEC7DF /* ScreenshotLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */; };
 		13034C540ED2AFF65EA8C3C4 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 480B8B71861A188B44AD4EF5 /* SnapshotTesting */; };
@@ -106,6 +107,7 @@
 		817D77578DD2EA9234363562 /* PadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadModel.swift; sourceTree = "<group>"; };
 		92AF4113A16F6A1BFD839E5E /* WhittlePadUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WhittlePadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B4FD98CEAAAB2FBD23ED55 /* QRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanner.swift; sourceTree = "<group>"; };
+		A7383FE4E60D5655C88D7914 /* ScreenshotLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotLibraryTests.swift; sourceTree = "<group>"; };
 		A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotLibrary.swift; sourceTree = "<group>"; };
 		AB20464A94C830B27FE5671F /* AnnotationRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationRendererTests.swift; sourceTree = "<group>"; };
 		B5FAC5B4B0CDC10216F08A79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				C931DB3D7EA5FB8BBA26ABED /* FileClipboardTests.swift */,
+				A7383FE4E60D5655C88D7914 /* ScreenshotLibraryTests.swift */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				6BD97184FC4D388CB0D8FA46 /* RegionCapture.swift in Sources */,
 				5B8D2A3F9DDE2CCB05D81E89 /* ScreenPermissionGuide.swift in Sources */,
 				7CDC60AB0A2BF180FBB0B7E6 /* ScreenshotLibrary.swift in Sources */,
+				02DB0495D639BAC593A6E45C /* ScreenshotLibraryTests.swift in Sources */,
 				A029CF2BF9000E2688B74D45 /* WhittleTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

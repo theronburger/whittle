@@ -32,12 +32,17 @@ final class ScreenshotLibrary {
     }
 
     func receive(_ record: ScreenshotRecord) throws {
-        try repository.receive(record)
-        try reload()
+        if try repository.receive(record) { updateCachedDocument(record.document) }
     }
 
     func receive(_ document: AnnotationDocument) throws {
-        if try repository.save(document) { try reload() }
+        if try repository.save(document) { updateCachedDocument(document) }
+    }
+
+    private func updateCachedDocument(_ document: AnnotationDocument) {
+        if let index = documents.firstIndex(where: { $0.id == document.id }) { documents[index] = document }
+        else { documents.append(document); documents.sort { $0.capturedAt > $1.capturedAt } }
+        if selectedID == nil { selectedID = documents.first?.id }
     }
 
     func edit(_ id: UUID, _ update: (inout AnnotationDocument) -> Void) {

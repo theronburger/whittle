@@ -28,7 +28,9 @@ final class DictationController {
         let microphoneAllowed = await AVAudioApplication.requestRecordPermission()
         guard self.sessionID == sessionID else { return }
         guard microphoneAllowed else { error = "Allow Microphone access for Whittle in iPad Settings."; return }
-        let recognizer = SFSpeechRecognizer(locale: .current)
+        let recognizer = SFSpeechRecognizer(locale: .current) ?? Locale.preferredLanguages.lazy.compactMap {
+            SFSpeechRecognizer(locale: Locale(identifier: $0))
+        }.first
         guard let recognizer, recognizer.isAvailable else { error = "Dictation is unavailable right now. Try again in a moment."; return }
         self.recognizer = recognizer
         do {

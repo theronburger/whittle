@@ -67,5 +67,6 @@ struct NoteEditor: View {
             }
         }
         .onDisappear { dictation.stop() }
+        .onChange(of: focused) { _, focused in if focused { dictation.stop() } }
     }
 }
