@@ -54,6 +54,12 @@ Pairing settings show connection status and retry controls. If discovery is
 unavailable, use an address from the Mac's Connection Details. Reset pairing on
 the Mac to invalidate the old code and scan the replacement on the iPad.
 
+If a VPN such as Cloudflare WARP blocks the connection, check its local network
+access settings. WARP can allow temporary local access when the company profile
+permits it. Whittle does not alter VPN policy. Ensure both devices permit Local
+Network access for Whittle; the Mac's Connection Details also lists addresses
+you can enter manually on the iPad.
+
 ## Privacy and ownership
 
 Screenshots and annotations stay on your devices and travel over an authenticated,

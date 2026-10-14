@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  HOMEBREW_NO_AUTO_UPDATE: "1"
+  HOMEBREW_NO_INSTALL_CLEANUP: "1"
+
+jobs:
+  core:
+    name: Core
+    runs-on: macos-26
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: sudo xcode-select --switch /Applications/Xcode_26.5.app
+      - run: swift test
+
+  mac:
+    name: macOS
+    runs-on: macos-26
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: sudo xcode-select --switch /Applications/Xcode_26.5.app
+      - run: brew install xcodegen
+      - run: xcodegen generate
+      - name: Run Mac tests and UI workflows
+        run: >-
+          xcodebuild -project Whittle.xcodeproj -scheme WhittleMac
+          -destination 'platform=macOS' -derivedDataPath build/Mac
+          -resultBundlePath build/MacTests.xcresult
+          -parallel-testing-enabled NO
+          CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM= test
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: macOS-test-results
+          path: build/MacTests.xcresult
+          retention-days: 7
+
+  ipad:
+    name: iPadOS
+    runs-on: macos-26
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: sudo xcode-select --switch /Applications/Xcode_26.5.app
+      - run: brew install xcodegen
+      - run: xcodegen generate
+      - name: Run rendering tests and iPad UI workflows
+        run: >-
+          xcodebuild -project Whittle.xcodeproj -scheme WhittlePad
+          -destination 'platform=iOS Simulator,name=iPad Pro 11-inch (M5),OS=26.5'
+          -derivedDataPath build/iPad -resultBundlePath build/iPadTests.xcresult
+          -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO test
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: iPadOS-test-results
+          path: build/iPadTests.xcresult
+          retention-days: 7
+
+  required:
+    name: Required tests
+    if: always()
+    needs: [core, mac, ipad]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require every test job to pass
+        env:
+          CORE_RESULT: ${{ needs.core.result }}
+          MAC_RESULT: ${{ needs.mac.result }}
+          IPAD_RESULT: ${{ needs.ipad.result }}
+        run: test "$CORE_RESULT" = success && test "$MAC_RESULT" = success && test "$IPAD_RESULT" = success
