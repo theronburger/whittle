@@ -226,9 +226,10 @@ final class PadModel {
             case .capture(let record): try library.receive(record); send(.acknowledge(record.document.version))
             case .annotations(let document): try library.receive(document); send(.acknowledge(document.version))
             case .exported(let requestID):
+                guard pendingExports.contains(where: { $0.requestID == requestID }) else { return }
                 pendingExports.removeAll { $0.requestID == requestID }
                 try saveOutbox()
-                copyStatus = "Copied on your Mac · image + notes"
+                copyStatus = pendingExports.isEmpty ? "Copied on your Mac · image + notes" : "Sending to Mac…"
             case .error(let detail): error = String(detail.prefix(1000)); copyStatus = nil
             case .ping: send(.pong)
             default: break

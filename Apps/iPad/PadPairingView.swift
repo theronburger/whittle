@@ -46,6 +46,7 @@ struct PadPairingView: View {
                             .accessibilityIdentifier("pairingCode")
                         HStack {
                             PasteButton(payloadType: String.self) { values in code = values.first ?? "" }.labelStyle(.titleAndIcon)
+                                .accessibilityLabel("Paste Pairing Code").accessibilityIdentifier("pastePairingCode")
                             Spacer()
                             Button("Pair Mac") { model.pair(code: code) }.disabled(code.isEmpty).accessibilityIdentifier("pairMac")
                         }

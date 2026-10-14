@@ -4,7 +4,7 @@ import SwiftUI
 import UIKit
 import WhittleCore
 
-enum CanvasTool: String { case pen, eraser, arrow, select }
+enum CanvasTool: String { case pen, eraser, arrow }
 
 @MainActor @Observable
 final class CanvasController {
@@ -230,7 +230,11 @@ private final class AnnotationOverlayView: UIView {
                 onEdit? { document in if let index = document.notes.firstIndex(where: { $0.id == id }) { document.notes[index].position = position } }
             }
             preview = nil; movingID = nil; setNeedsDisplay()
-        case .cancelled, .failed: preview = nil; movingID = nil; setNeedsDisplay()
+        case .cancelled, .failed:
+            if let id = movingID, let index = document?.notes.firstIndex(where: { $0.id == id }) {
+                document?.notes[index].position = CanvasPoint(x: initialPosition.x, y: initialPosition.y)
+            }
+            preview = nil; movingID = nil; setNeedsDisplay()
         default: break
         }
     }
