@@ -30,6 +30,11 @@ Create an untracked `Config/Signing.xcconfig` from
 connected iPad. Xcode automatic signing manages the development certificate and
 provisioning profile. Keep signing files and pairing codes out of the repository.
 
+For Mac development updates, run `./scripts/install-mac.sh`. It keeps the install
+at `~/Applications/Whittle.app`, checks that the signing identity still matches,
+and waits for the old process to exit before replacing it. This avoids repeated
+Screen Recording grants caused by unstable signatures or changing app paths.
+
 ## Use
 
 1. Open Whittle on the Mac. Open its menu bar icon and settings to show the QR.
@@ -42,7 +47,8 @@ provisioning profile. Keep signing files and pairing codes out of the repository
    or type. Drag an existing note to move it; tap it to edit. Undo and redo apply
    to annotations.
 6. Tap Copy on the iPad. The Mac clipboard receives **two actual files**:
-   `Whittle.png` and `Whittle.md`. Paste them into your agent, or drag the feedback
+   a PNG and a Markdown file with matching capture and revision names. The notes
+   reference the corresponding image. Paste them into your agent, or drag the feedback
    card from the Mac menu panel.
 
 Captures queue without replacing an active screenshot. Annotations save locally
@@ -53,6 +59,17 @@ after reconnecting to recover missed edits and captures.
 Pairing settings show connection status and retry controls. If discovery is
 unavailable, use an address from the Mac's Connection Details. Reset pairing on
 the Mac to invalidate the old code and scan the replacement on the iPad.
+
+macOS Firewall must allow incoming connections for Whittle. This is separate
+from Local Network privacy permission: check **System Settings → Network →
+Firewall → Options** if the iPad reports a reset connection. Whittle never
+changes firewall policy itself.
+
+If a VPN such as Cloudflare WARP blocks the connection, check its local network
+access settings. WARP can allow temporary local access when the company profile
+permits it. Whittle does not alter VPN policy. Ensure both devices permit Local
+Network access for Whittle; the Mac's Connection Details also lists addresses
+you can enter manually on the iPad.
 
 ## Privacy and ownership
 

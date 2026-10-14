@@ -1,0 +1,1107 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02DB0495D639BAC593A6E45C /* ScreenshotLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7383FE4E60D5655C88D7914 /* ScreenshotLibraryTests.swift */; };
+		07BF0A97E6F1F1AD68FAAF3C /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCF49E09381A40F02ADF98 /* CanvasController.swift */; };
+		0E13E9D2AB43BAB2D0BEC7DF /* ScreenshotLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */; };
+		13034C540ED2AFF65EA8C3C4 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 480B8B71861A188B44AD4EF5 /* SnapshotTesting */; };
+		270A4E07101E5A1EA9FF8ACC /* MacMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF8042C39987EAC8E23445 /* MacMenuView.swift */; };
+		279A7FB75AF22FE01D4B610A /* ScreenshotLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */; };
+		30D97056D93FCC6397C899DF /* DemoScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A326455888FD43E86E8FEB /* DemoScreenshot.swift */; };
+		3D9E00C63C0BF36B6AB1BF1A /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20654AE030C246A3CED8FDA /* MacSettingsView.swift */; };
+		3FC7545653470E1928F511D4 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659D5ACCFAD346AD3192B89C /* GlobalShortcuts.swift */; };
+		4481B153EF3F90E383C2629E /* MacMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF8042C39987EAC8E23445 /* MacMenuView.swift */; };
+		4655E80F8DA0E7B4F669B125 /* AnnotationFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E08DB353C34A8352574A0 /* AnnotationFlowTests.swift */; };
+		53C07F5F2DC85ED5FD5F1EBD /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = BF6F26A5C6545DC5684A0E22 /* KeyboardShortcuts */; };
+		5B8D2A3F9DDE2CCB05D81E89 /* ScreenPermissionGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A93DF979E2136FDCFA4C28 /* ScreenPermissionGuide.swift */; };
+		622AA0B63BBBE4D8C15A458D /* AnnotationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC40C95142D30A011B4A6D82 /* AnnotationRenderer.swift */; };
+		6438C5E4AEE683C13D957CB7 /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20654AE030C246A3CED8FDA /* MacSettingsView.swift */; };
+		67B94E0AC964E6B650F4BAD0 /* ThirdPartyNotices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72535094A9BC6AEBCD7513FE /* ThirdPartyNotices.txt */; };
+		6B8B51E84D5EBD2C72533255 /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCF49E09381A40F02ADF98 /* CanvasController.swift */; };
+		6BD97184FC4D388CB0D8FA46 /* RegionCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DA3F47A635B88006A2719 /* RegionCapture.swift */; };
+		6D2E4EC75647A46F5AC3886D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FAC5B4B0CDC10216F08A79 /* Assets.xcassets */; };
+		71C46AD5790B069BBE6C4792 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FD98CEAAAB2FBD23ED55 /* QRScanner.swift */; };
+		72CB937E9559E972B750EB57 /* WhittleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D7A35DD1FC01A28A21E863 /* WhittleTheme.swift */; };
+		7326D542A69BE68C72817B9C /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659D5ACCFAD346AD3192B89C /* GlobalShortcuts.swift */; };
+		7601DADEC7DC8185B2EAE260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FAC5B4B0CDC10216F08A79 /* Assets.xcassets */; };
+		78BA093AF259C47A4A9566D6 /* PadPairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63585E2540CE7B97ED543D5 /* PadPairingView.swift */; };
+		7CDC60AB0A2BF180FBB0B7E6 /* ScreenshotLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */; };
+		7F1EC87E971496BACA12E482 /* AnnotationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC40C95142D30A011B4A6D82 /* AnnotationRenderer.swift */; };
+		8592C7A2CFE9D3BC051A0144 /* DictationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9180AB83D54FAC690CD0D2 /* DictationController.swift */; };
+		85F0E3AA5B87D78346C945D8 /* PairingVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803BC60A5C1F41D4A2D5C7AA /* PairingVault.swift */; };
+		87DBE9D4783C7A07AB931368 /* WhittleCore in Frameworks */ = {isa = PBXBuildFile; productRef = B7249F15FE55CB312EB5219C /* WhittleCore */; };
+		893DE2F582686F392FEE84A7 /* WhittleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D7A35DD1FC01A28A21E863 /* WhittleTheme.swift */; };
+		8A9979DB4ED5524B762BBAA1 /* AnnotationRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB20464A94C830B27FE5671F /* AnnotationRendererTests.swift */; };
+		8CCDAA76DD2EA910D0E5156F /* MacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC8F6ADDEAF3A9A5FF0FB8 /* MacModel.swift */; };
+		8CFB2FFD8289375A5B8162FF /* ScreenshotLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */; };
+		90B1CCC2DD424DCE148F0993 /* PairingVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803BC60A5C1F41D4A2D5C7AA /* PairingVault.swift */; };
+		9C20D7AEA0E6E01A26F2A052 /* WhittleCore in Frameworks */ = {isa = PBXBuildFile; productRef = 78B10FBC86817F2C27458D57 /* WhittleCore */; };
+		9D9FEEBDC0615A8810397E90 /* WhittleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D7A35DD1FC01A28A21E863 /* WhittleTheme.swift */; };
+		9F4F3B118A2E26EEFCCDA956 /* NoteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516B922E5EAD21DF7993BDEC /* NoteEditor.swift */; };
+		A029CF2BF9000E2688B74D45 /* WhittleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D7A35DD1FC01A28A21E863 /* WhittleTheme.swift */; };
+		A557F1E78BB90F1F7586F307 /* WhittlePadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAA259D05EF4F86F1E5B4C /* WhittlePadApp.swift */; };
+		B07C2943177BF9C6DB157D45 /* PairingVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803BC60A5C1F41D4A2D5C7AA /* PairingVault.swift */; };
+		B3984778B04E22FA3BA2EB26 /* RegionCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DA3F47A635B88006A2719 /* RegionCapture.swift */; };
+		B5A360C6F417B6C49B067539 /* MacFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB366913F71B40523926A39 /* MacFlowTests.swift */; };
+		C1185F1990E967E2758ECDD4 /* WhittleCore in Frameworks */ = {isa = PBXBuildFile; productRef = 25C90961B771B7E5FC46436E /* WhittleCore */; };
+		CAD89BEBB85C330122296C78 /* FileClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026B38113EF1E67D468E2D3 /* FileClipboard.swift */; };
+		D2E636B12487EB4FBEBD2992 /* DemoScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A326455888FD43E86E8FEB /* DemoScreenshot.swift */; };
+		D3A9C63CB85F231F223BC592 /* MacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC8F6ADDEAF3A9A5FF0FB8 /* MacModel.swift */; };
+		DE9D5A22C5D8462E42D1F518 /* PadWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B94631D9BDCA746073798D /* PadWorkspaceView.swift */; };
+		E0DD3B074F4891B07317A47B /* FileClipboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931DB3D7EA5FB8BBA26ABED /* FileClipboardTests.swift */; };
+		E3A7A467E84A43806C90D715 /* DemoScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A326455888FD43E86E8FEB /* DemoScreenshot.swift */; };
+		E43089171FE65657AE775D3F /* PadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D77578DD2EA9234363562 /* PadModel.swift */; };
+		E665A1705DD42A298577D532 /* WhittleCore in Frameworks */ = {isa = PBXBuildFile; productRef = 433089C6F4A535737051878D /* WhittleCore */; };
+		E78E6B2D5BCB20995C8677CE /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = C5A9141B73625ABFB9F4C3D5 /* SnapshotTesting */; };
+		EA386B410FCFE3A5B5A72567 /* WhittleMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7067C1C04A7E17DD31487F29 /* WhittleMacApp.swift */; };
+		EAAE75D678929208953F3FB5 /* ScreenPermissionGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A93DF979E2136FDCFA4C28 /* ScreenPermissionGuide.swift */; };
+		F4C069B3B37FF68A89F8F0EE /* FileClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026B38113EF1E67D468E2D3 /* FileClipboard.swift */; };
+		F8B0020693A5D9EF4C1929B5 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCD93F04DAA350C601304C0 /* KeyboardShortcuts */; };
+		FA8C59DE274547BF796D1B3A /* CanvasHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC9D1837EE63DB65296719 /* CanvasHistoryTests.swift */; };
+		FDA5B428CEE66E86D788D256 /* WhittleCore in Frameworks */ = {isa = PBXBuildFile; productRef = A6EA8910F58B17DCB14AC2C2 /* WhittleCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A246C661FCE7E448BC8E01D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4DDB9132866A792C083BEA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AEF0962944C8C2C356502BC;
+			remoteInfo = WhittleMac;
+		};
+		420120FE17A85EDDD571D066 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4DDB9132866A792C083BEA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A6141A551852C276C4E621B;
+			remoteInfo = WhittlePad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		026DA3F47A635B88006A2719 /* RegionCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCapture.swift; sourceTree = "<group>"; };
+		05FF8042C39987EAC8E23445 /* MacMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMenuView.swift; sourceTree = "<group>"; };
+		09A93DF979E2136FDCFA4C28 /* ScreenPermissionGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPermissionGuide.swift; sourceTree = "<group>"; };
+		0D5EA401346DF29FA6476687 /* WhittleMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhittleMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B94631D9BDCA746073798D /* PadWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadWorkspaceView.swift; sourceTree = "<group>"; };
+		1BBAA259D05EF4F86F1E5B4C /* WhittlePadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhittlePadApp.swift; sourceTree = "<group>"; };
+		2CBC9D1837EE63DB65296719 /* CanvasHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasHistoryTests.swift; sourceTree = "<group>"; };
+		3026B38113EF1E67D468E2D3 /* FileClipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileClipboard.swift; sourceTree = "<group>"; };
+		41EC8F6ADDEAF3A9A5FF0FB8 /* MacModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacModel.swift; sourceTree = "<group>"; };
+		44A326455888FD43E86E8FEB /* DemoScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoScreenshot.swift; sourceTree = "<group>"; };
+		48E46C8C9E56BF0DD2A7124C /* whittle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = whittle; path = .; sourceTree = SOURCE_ROOT; };
+		516B922E5EAD21DF7993BDEC /* NoteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditor.swift; sourceTree = "<group>"; };
+		659D5ACCFAD346AD3192B89C /* GlobalShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalShortcuts.swift; sourceTree = "<group>"; };
+		7067C1C04A7E17DD31487F29 /* WhittleMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhittleMacApp.swift; sourceTree = "<group>"; };
+		72535094A9BC6AEBCD7513FE /* ThirdPartyNotices.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ThirdPartyNotices.txt; sourceTree = "<group>"; };
+		76C78524DBF3ECAAF986410A /* WhittlePad.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = WhittlePad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C264104E5FC426F5A596CE /* WhittleMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhittleMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ADCF49E09381A40F02ADF98 /* CanvasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
+		803BC60A5C1F41D4A2D5C7AA /* PairingVault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingVault.swift; sourceTree = "<group>"; };
+		817D77578DD2EA9234363562 /* PadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadModel.swift; sourceTree = "<group>"; };
+		92AF4113A16F6A1BFD839E5E /* WhittlePadUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WhittlePadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B4FD98CEAAAB2FBD23ED55 /* QRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanner.swift; sourceTree = "<group>"; };
+		A7383FE4E60D5655C88D7914 /* ScreenshotLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotLibraryTests.swift; sourceTree = "<group>"; };
+		A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotLibrary.swift; sourceTree = "<group>"; };
+		AB20464A94C830B27FE5671F /* AnnotationRendererTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationRendererTests.swift; sourceTree = "<group>"; };
+		B5FAC5B4B0CDC10216F08A79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C931DB3D7EA5FB8BBA26ABED /* FileClipboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileClipboardTests.swift; sourceTree = "<group>"; };
+		CEB366913F71B40523926A39 /* MacFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacFlowTests.swift; sourceTree = "<group>"; };
+		D20654AE030C246A3CED8FDA /* MacSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingsView.swift; sourceTree = "<group>"; };
+		D59B58B74EE75C2D18595E57 /* WhittleMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhittleMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC40C95142D30A011B4A6D82 /* AnnotationRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationRenderer.swift; sourceTree = "<group>"; };
+		DD9180AB83D54FAC690CD0D2 /* DictationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictationController.swift; sourceTree = "<group>"; };
+		E4D7A35DD1FC01A28A21E863 /* WhittleTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhittleTheme.swift; sourceTree = "<group>"; };
+		E5E666A4B1B1152C7B697014 /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
+		E63585E2540CE7B97ED543D5 /* PadPairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadPairingView.swift; sourceTree = "<group>"; };
+		EC8E08DB353C34A8352574A0 /* AnnotationFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationFlowTests.swift; sourceTree = "<group>"; };
+		FC706096AB7410FC450FBB8D /* WhittlePadTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WhittlePadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B38B7204931EEDB6A7F95FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDA5B428CEE66E86D788D256 /* WhittleCore in Frameworks */,
+				53C07F5F2DC85ED5FD5F1EBD /* KeyboardShortcuts in Frameworks */,
+				E78E6B2D5BCB20995C8677CE /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1176E890358AA237C6EF3FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1185F1990E967E2758ECDD4 /* WhittleCore in Frameworks */,
+				13034C540ED2AFF65EA8C3C4 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75B21D8C5B03415907953C9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87DBE9D4783C7A07AB931368 /* WhittleCore in Frameworks */,
+				F8B0020693A5D9EF4C1929B5 /* KeyboardShortcuts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5FC9F2D3AD0CAE6D0097771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E665A1705DD42A298577D532 /* WhittleCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC4BD8E00BD8A8327AF6A8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C20D7AEA0E6E01A26F2A052 /* WhittleCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18BBBDC1228CD1D9AC2A53DA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				44A326455888FD43E86E8FEB /* DemoScreenshot.swift */,
+				803BC60A5C1F41D4A2D5C7AA /* PairingVault.swift */,
+				A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */,
+				E4D7A35DD1FC01A28A21E863 /* WhittleTheme.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		1C1C5D560D8356FA73A9BBE7 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				AB20464A94C830B27FE5671F /* AnnotationRendererTests.swift */,
+				2CBC9D1837EE63DB65296719 /* CanvasHistoryTests.swift */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		270B8FAB74FC82FFED32E911 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1C1C5D560D8356FA73A9BBE7 /* iPad */,
+				678D4937FEA88B43D9557272 /* iPadUI */,
+				362152208E1334258B2FA81A /* Mac */,
+				7EFFF698A267F2C50AD8B29A /* MacUI */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		362152208E1334258B2FA81A /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				C931DB3D7EA5FB8BBA26ABED /* FileClipboardTests.swift */,
+				A7383FE4E60D5655C88D7914 /* ScreenshotLibraryTests.swift */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		6200C07770EDADE579EB43EB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E5E666A4B1B1152C7B697014 /* Local.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		62BB6CAF0A1D28507D9FF634 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				7C94335FEA57B1C4C5BE39D0 /* iPad */,
+				82C42B90DFD992DDA2865FCF /* Mac */,
+				18BBBDC1228CD1D9AC2A53DA /* Shared */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		678D4937FEA88B43D9557272 /* iPadUI */ = {
+			isa = PBXGroup;
+			children = (
+				EC8E08DB353C34A8352574A0 /* AnnotationFlowTests.swift */,
+			);
+			path = iPadUI;
+			sourceTree = "<group>";
+		};
+		7C94335FEA57B1C4C5BE39D0 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				DC40C95142D30A011B4A6D82 /* AnnotationRenderer.swift */,
+				7ADCF49E09381A40F02ADF98 /* CanvasController.swift */,
+				DD9180AB83D54FAC690CD0D2 /* DictationController.swift */,
+				516B922E5EAD21DF7993BDEC /* NoteEditor.swift */,
+				817D77578DD2EA9234363562 /* PadModel.swift */,
+				E63585E2540CE7B97ED543D5 /* PadPairingView.swift */,
+				13B94631D9BDCA746073798D /* PadWorkspaceView.swift */,
+				94B4FD98CEAAAB2FBD23ED55 /* QRScanner.swift */,
+				1BBAA259D05EF4F86F1E5B4C /* WhittlePadApp.swift */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		7EFFF698A267F2C50AD8B29A /* MacUI */ = {
+			isa = PBXGroup;
+			children = (
+				CEB366913F71B40523926A39 /* MacFlowTests.swift */,
+			);
+			path = MacUI;
+			sourceTree = "<group>";
+		};
+		82C42B90DFD992DDA2865FCF /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				3026B38113EF1E67D468E2D3 /* FileClipboard.swift */,
+				659D5ACCFAD346AD3192B89C /* GlobalShortcuts.swift */,
+				05FF8042C39987EAC8E23445 /* MacMenuView.swift */,
+				41EC8F6ADDEAF3A9A5FF0FB8 /* MacModel.swift */,
+				D20654AE030C246A3CED8FDA /* MacSettingsView.swift */,
+				026DA3F47A635B88006A2719 /* RegionCapture.swift */,
+				09A93DF979E2136FDCFA4C28 /* ScreenPermissionGuide.swift */,
+				7067C1C04A7E17DD31487F29 /* WhittleMacApp.swift */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		A1B75E9E68D82EB06EA236E7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B5FAC5B4B0CDC10216F08A79 /* Assets.xcassets */,
+				72535094A9BC6AEBCD7513FE /* ThirdPartyNotices.txt */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B2B99B1B83A98645163993D4 = {
+			isa = PBXGroup;
+			children = (
+				62BB6CAF0A1D28507D9FF634 /* Apps */,
+				A1B75E9E68D82EB06EA236E7 /* Assets */,
+				6200C07770EDADE579EB43EB /* Config */,
+				EC72FB3E2FE0A72F8CCE5DEB /* Packages */,
+				270B8FAB74FC82FFED32E911 /* Tests */,
+				D6AC1E329A5E02B408B5CBC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D6AC1E329A5E02B408B5CBC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D59B58B74EE75C2D18595E57 /* WhittleMac.app */,
+				0D5EA401346DF29FA6476687 /* WhittleMacTests.xctest */,
+				79C264104E5FC426F5A596CE /* WhittleMacUITests.xctest */,
+				76C78524DBF3ECAAF986410A /* WhittlePad.app */,
+				FC706096AB7410FC450FBB8D /* WhittlePadTests.xctest */,
+				92AF4113A16F6A1BFD839E5E /* WhittlePadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC72FB3E2FE0A72F8CCE5DEB /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				48E46C8C9E56BF0DD2A7124C /* whittle */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09F05360CF36A8C0956FC430 /* WhittleMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EFAEB27541CB1BC28019ABA /* Build configuration list for PBXNativeTarget "WhittleMacUITests" */;
+			buildPhases = (
+				B125471C9B8C3F26008F4C50 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E77200544E7639C8174628E /* PBXTargetDependency */,
+			);
+			name = WhittleMacUITests;
+			packageProductDependencies = (
+			);
+			productName = WhittleMacUITests;
+			productReference = 79C264104E5FC426F5A596CE /* WhittleMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		3E1A62DD10CB78D935264454 /* WhittleMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E23AB118C1E9BF9EBFF46A51 /* Build configuration list for PBXNativeTarget "WhittleMacTests" */;
+			buildPhases = (
+				4C28CF57D4B0472BB771F4E7 /* Sources */,
+				0B38B7204931EEDB6A7F95FD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhittleMacTests;
+			packageProductDependencies = (
+				A6EA8910F58B17DCB14AC2C2 /* WhittleCore */,
+				BF6F26A5C6545DC5684A0E22 /* KeyboardShortcuts */,
+				C5A9141B73625ABFB9F4C3D5 /* SnapshotTesting */,
+			);
+			productName = WhittleMacTests;
+			productReference = 0D5EA401346DF29FA6476687 /* WhittleMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6A6141A551852C276C4E621B /* WhittlePad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F26A20397FBE591D71F4180 /* Build configuration list for PBXNativeTarget "WhittlePad" */;
+			buildPhases = (
+				1E3DDFDE9722E686FFA16400 /* Sources */,
+				C8B6F5E82B815E18C84A607D /* Resources */,
+				D5FC9F2D3AD0CAE6D0097771 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhittlePad;
+			packageProductDependencies = (
+				433089C6F4A535737051878D /* WhittleCore */,
+			);
+			productName = WhittlePad;
+			productReference = 76C78524DBF3ECAAF986410A /* WhittlePad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70B3D890953F68163B7E74A6 /* WhittlePadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F0A2F1F294DCFAA32A5D7D5 /* Build configuration list for PBXNativeTarget "WhittlePadTests" */;
+			buildPhases = (
+				780B1E479F468996129F1013 /* Sources */,
+				1176E890358AA237C6EF3FA5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhittlePadTests;
+			packageProductDependencies = (
+				25C90961B771B7E5FC46436E /* WhittleCore */,
+				480B8B71861A188B44AD4EF5 /* SnapshotTesting */,
+			);
+			productName = WhittlePadTests;
+			productReference = FC706096AB7410FC450FBB8D /* WhittlePadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		819449F5DE675E2245FF33B6 /* WhittlePadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CD6FC9F569EAC4318DEC5CB /* Build configuration list for PBXNativeTarget "WhittlePadUITests" */;
+			buildPhases = (
+				C9B62C60515BA10CC44B6C58 /* Sources */,
+				DCC4BD8E00BD8A8327AF6A8D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D255DED0FD87C2BC2490FFC4 /* PBXTargetDependency */,
+			);
+			name = WhittlePadUITests;
+			packageProductDependencies = (
+				78B10FBC86817F2C27458D57 /* WhittleCore */,
+			);
+			productName = WhittlePadUITests;
+			productReference = 92AF4113A16F6A1BFD839E5E /* WhittlePadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		8AEF0962944C8C2C356502BC /* WhittleMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A98920CB17E513D1EE0539C /* Build configuration list for PBXNativeTarget "WhittleMac" */;
+			buildPhases = (
+				F9713C473DD38A513AEF697C /* Sources */,
+				72682C402F186C4615CBFC0F /* Resources */,
+				75B21D8C5B03415907953C9E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhittleMac;
+			packageProductDependencies = (
+				B7249F15FE55CB312EB5219C /* WhittleCore */,
+				7DCD93F04DAA350C601304C0 /* KeyboardShortcuts */,
+			);
+			productName = WhittleMac;
+			productReference = D59B58B74EE75C2D18595E57 /* WhittleMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4DDB9132866A792C083BEA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					09F05360CF36A8C0956FC430 = {
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8AEF0962944C8C2C356502BC;
+					};
+					3E1A62DD10CB78D935264454 = {
+						ProvisioningStyle = Automatic;
+					};
+					6A6141A551852C276C4E621B = {
+						ProvisioningStyle = Automatic;
+					};
+					70B3D890953F68163B7E74A6 = {
+						ProvisioningStyle = Automatic;
+					};
+					819449F5DE675E2245FF33B6 = {
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6A6141A551852C276C4E621B;
+					};
+					8AEF0962944C8C2C356502BC = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 020FCD784AD8C52A306AC40B /* Build configuration list for PBXProject "Whittle" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B2B99B1B83A98645163993D4;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				55243B14E967722BAE07384A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				472156FC56FBE7BEF99C4F47 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				D53C19A6F02B3254E99B7F0D /* XCLocalSwiftPackageReference "." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D6AC1E329A5E02B408B5CBC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8AEF0962944C8C2C356502BC /* WhittleMac */,
+				6A6141A551852C276C4E621B /* WhittlePad */,
+				3E1A62DD10CB78D935264454 /* WhittleMacTests */,
+				70B3D890953F68163B7E74A6 /* WhittlePadTests */,
+				09F05360CF36A8C0956FC430 /* WhittleMacUITests */,
+				819449F5DE675E2245FF33B6 /* WhittlePadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72682C402F186C4615CBFC0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7601DADEC7DC8185B2EAE260 /* Assets.xcassets in Resources */,
+				67B94E0AC964E6B650F4BAD0 /* ThirdPartyNotices.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8B6F5E82B815E18C84A607D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D2E4EC75647A46F5AC3886D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E3DDFDE9722E686FFA16400 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F1EC87E971496BACA12E482 /* AnnotationRenderer.swift in Sources */,
+				07BF0A97E6F1F1AD68FAAF3C /* CanvasController.swift in Sources */,
+				30D97056D93FCC6397C899DF /* DemoScreenshot.swift in Sources */,
+				8592C7A2CFE9D3BC051A0144 /* DictationController.swift in Sources */,
+				9F4F3B118A2E26EEFCCDA956 /* NoteEditor.swift in Sources */,
+				E43089171FE65657AE775D3F /* PadModel.swift in Sources */,
+				78BA093AF259C47A4A9566D6 /* PadPairingView.swift in Sources */,
+				DE9D5A22C5D8462E42D1F518 /* PadWorkspaceView.swift in Sources */,
+				B07C2943177BF9C6DB157D45 /* PairingVault.swift in Sources */,
+				71C46AD5790B069BBE6C4792 /* QRScanner.swift in Sources */,
+				0E13E9D2AB43BAB2D0BEC7DF /* ScreenshotLibrary.swift in Sources */,
+				A557F1E78BB90F1F7586F307 /* WhittlePadApp.swift in Sources */,
+				72CB937E9559E972B750EB57 /* WhittleTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C28CF57D4B0472BB771F4E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3A7A467E84A43806C90D715 /* DemoScreenshot.swift in Sources */,
+				CAD89BEBB85C330122296C78 /* FileClipboard.swift in Sources */,
+				E0DD3B074F4891B07317A47B /* FileClipboardTests.swift in Sources */,
+				3FC7545653470E1928F511D4 /* GlobalShortcuts.swift in Sources */,
+				4481B153EF3F90E383C2629E /* MacMenuView.swift in Sources */,
+				8CCDAA76DD2EA910D0E5156F /* MacModel.swift in Sources */,
+				6438C5E4AEE683C13D957CB7 /* MacSettingsView.swift in Sources */,
+				85F0E3AA5B87D78346C945D8 /* PairingVault.swift in Sources */,
+				6BD97184FC4D388CB0D8FA46 /* RegionCapture.swift in Sources */,
+				5B8D2A3F9DDE2CCB05D81E89 /* ScreenPermissionGuide.swift in Sources */,
+				7CDC60AB0A2BF180FBB0B7E6 /* ScreenshotLibrary.swift in Sources */,
+				02DB0495D639BAC593A6E45C /* ScreenshotLibraryTests.swift in Sources */,
+				A029CF2BF9000E2688B74D45 /* WhittleTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780B1E479F468996129F1013 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				622AA0B63BBBE4D8C15A458D /* AnnotationRenderer.swift in Sources */,
+				8A9979DB4ED5524B762BBAA1 /* AnnotationRendererTests.swift in Sources */,
+				6B8B51E84D5EBD2C72533255 /* CanvasController.swift in Sources */,
+				FA8C59DE274547BF796D1B3A /* CanvasHistoryTests.swift in Sources */,
+				279A7FB75AF22FE01D4B610A /* ScreenshotLibrary.swift in Sources */,
+				893DE2F582686F392FEE84A7 /* WhittleTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B125471C9B8C3F26008F4C50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A360C6F417B6C49B067539 /* MacFlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9B62C60515BA10CC44B6C58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4655E80F8DA0E7B4F669B125 /* AnnotationFlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9713C473DD38A513AEF697C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E636B12487EB4FBEBD2992 /* DemoScreenshot.swift in Sources */,
+				F4C069B3B37FF68A89F8F0EE /* FileClipboard.swift in Sources */,
+				7326D542A69BE68C72817B9C /* GlobalShortcuts.swift in Sources */,
+				270A4E07101E5A1EA9FF8ACC /* MacMenuView.swift in Sources */,
+				D3A9C63CB85F231F223BC592 /* MacModel.swift in Sources */,
+				3D9E00C63C0BF36B6AB1BF1A /* MacSettingsView.swift in Sources */,
+				90B1CCC2DD424DCE148F0993 /* PairingVault.swift in Sources */,
+				B3984778B04E22FA3BA2EB26 /* RegionCapture.swift in Sources */,
+				EAAE75D678929208953F3FB5 /* ScreenPermissionGuide.swift in Sources */,
+				8CFB2FFD8289375A5B8162FF /* ScreenshotLibrary.swift in Sources */,
+				EA386B410FCFE3A5B5A72567 /* WhittleMacApp.swift in Sources */,
+				9D9FEEBDC0615A8810397E90 /* WhittleTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E77200544E7639C8174628E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AEF0962944C8C2C356502BC /* WhittleMac */;
+			targetProxy = 1A246C661FCE7E448BC8E01D /* PBXContainerItemProxy */;
+		};
+		D255DED0FD87C2BC2490FFC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A6141A551852C276C4E621B /* WhittlePad */;
+			targetProxy = 420120FE17A85EDDD571D066 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		18FEFAB348A8F006D8F3FBA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.WhittleMacUITests;
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = WhittleMac;
+			};
+			name = Release;
+		};
+		2B17AE73D479CEAA446B475C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.WhittlePadUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WhittlePad;
+			};
+			name = Release;
+		};
+		2BE4DA253EBC440924435657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.WhittleMacUITests;
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = WhittleMac;
+			};
+			name = Debug;
+		};
+		503FC9B7CC2D7B1559C8CB2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5E666A4B1B1152C7B697014 /* Local.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/Mac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Config/Mac-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.whittle.mac;
+				PRODUCT_NAME = Whittle;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		59F4EA51D5820A735528883D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.WhittlePadUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WhittlePad;
+			};
+			name = Debug;
+		};
+		72C909BDD54062753C6D3AB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5E666A4B1B1152C7B697014 /* Local.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/iPad.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Config/iPad-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.whittle.ipad;
+				PRODUCT_NAME = Whittle;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		8181EB6518064943A9E78E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.WhittleMacTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8B2377DF43E19F721D8EA721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.WhittleMacTests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B38B31CAE998ADB8C199EF9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5E666A4B1B1152C7B697014 /* Local.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/Mac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Config/Mac-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.whittle.mac;
+				PRODUCT_NAME = Whittle;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B6F94DF4DC19C1E52BA67729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.WhittlePadTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B86898AEA1B313D9512AFF5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C87C6098CE748E10F1674287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.WhittlePadTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CFE59800A3CF70BDB71790A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D27CD2D26B5347D1D9DDC50F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5E666A4B1B1152C7B697014 /* Local.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/iPad.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Config/iPad-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.theronburger.whittle.ipad;
+				PRODUCT_NAME = Whittle;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		020FCD784AD8C52A306AC40B /* Build configuration list for PBXProject "Whittle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B86898AEA1B313D9512AFF5A /* Debug */,
+				CFE59800A3CF70BDB71790A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1A98920CB17E513D1EE0539C /* Build configuration list for PBXNativeTarget "WhittleMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B38B31CAE998ADB8C199EF9D /* Debug */,
+				503FC9B7CC2D7B1559C8CB2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1F0A2F1F294DCFAA32A5D7D5 /* Build configuration list for PBXNativeTarget "WhittlePadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6F94DF4DC19C1E52BA67729 /* Debug */,
+				C87C6098CE748E10F1674287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5F26A20397FBE591D71F4180 /* Build configuration list for PBXNativeTarget "WhittlePad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27CD2D26B5347D1D9DDC50F /* Debug */,
+				72C909BDD54062753C6D3AB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6CD6FC9F569EAC4318DEC5CB /* Build configuration list for PBXNativeTarget "WhittlePadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F4EA51D5820A735528883D /* Debug */,
+				2B17AE73D479CEAA446B475C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7EFAEB27541CB1BC28019ABA /* Build configuration list for PBXNativeTarget "WhittleMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BE4DA253EBC440924435657 /* Debug */,
+				18FEFAB348A8F006D8F3FBA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E23AB118C1E9BF9EBFF46A51 /* Build configuration list for PBXNativeTarget "WhittleMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8181EB6518064943A9E78E2E /* Debug */,
+				8B2377DF43E19F721D8EA721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D53C19A6F02B3254E99B7F0D /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		472156FC56FBE7BEF99C4F47 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = exactVersion;
+				version = 1.19.6;
+			};
+		};
+		55243B14E967722BAE07384A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		25C90961B771B7E5FC46436E /* WhittleCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WhittleCore;
+		};
+		433089C6F4A535737051878D /* WhittleCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WhittleCore;
+		};
+		480B8B71861A188B44AD4EF5 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 472156FC56FBE7BEF99C4F47 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		78B10FBC86817F2C27458D57 /* WhittleCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WhittleCore;
+		};
+		7DCD93F04DAA350C601304C0 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55243B14E967722BAE07384A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+		A6EA8910F58B17DCB14AC2C2 /* WhittleCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WhittleCore;
+		};
+		B7249F15FE55CB312EB5219C /* WhittleCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WhittleCore;
+		};
+		BF6F26A5C6545DC5684A0E22 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55243B14E967722BAE07384A /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+		C5A9141B73625ABFB9F4C3D5 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 472156FC56FBE7BEF99C4F47 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C4DDB9132866A792C083BEA1 /* Project object */;
+}
