@@ -39,6 +39,8 @@ struct DocumentTests {
         #expect(files.urls.count == 2)
         #expect(files.image.pathExtension == "png")
         #expect(files.notes.pathExtension == "md")
+        #expect(files.image.deletingPathExtension().lastPathComponent == files.notes.deletingPathExtension().lastPathComponent)
+        #expect(markdown.contains(files.image.lastPathComponent))
     }
 
     @Test func revisionsGetStableSeparateExportFiles() throws {
@@ -49,6 +51,7 @@ struct DocumentTests {
         document.markChanged()
         let second = try ExportedFiles(document: document, annotatedPNG: Data([2]), directory: directory)
         #expect(first.image != second.image)
+        #expect(first.image.lastPathComponent != second.image.lastPathComponent)
         #expect(try Data(contentsOf: first.image) == Data([1]))
         #expect(second.image.path.hasPrefix(directory.path))
     }

@@ -1,5 +1,4 @@
 import XCTest
-import UIKit
 import WhittleCore
 
 final class AnnotationFlowTests: XCTestCase {
@@ -10,8 +9,9 @@ final class AnnotationFlowTests: XCTestCase {
         app.launch()
         app.buttons["connectionSettings"].tap()
         let ticket = try PairingTicket(name: "Code-paired Mac", hosts: ["127.0.0.1"])
-        UIPasteboard.general.string = ticket.code
-        app.buttons["Paste"].tap()
+        let codeField = app.descendants(matching: .any).matching(identifier: "pairingCode").firstMatch
+        codeField.tap()
+        codeField.typeText(ticket.code)
         app.buttons["pairMac"].tap()
         app.buttons["connectionSettings"].tap()
         XCTAssertTrue(app.staticTexts["Code-paired Mac"].waitForExistence(timeout: 5))
@@ -34,6 +34,10 @@ final class AnnotationFlowTests: XCTestCase {
         editor.typeText("Increase the spacing above this card.")
         app.buttons["finishNote"].tap()
         XCTAssertTrue(app.staticTexts["annotationSummary"].label.contains("1 notes"))
+        let screenshot = XCTAttachment(screenshot: app.screenshot())
+        screenshot.name = "Workspace with an anchored note"
+        screenshot.lifetime = .keepAlways
+        add(screenshot)
         app.buttons["copyFeedback"].tap()
         XCTAssertTrue(app.staticTexts["copyStatus"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["copyStatus"].label.contains("Queued"))

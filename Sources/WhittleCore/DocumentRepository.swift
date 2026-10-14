@@ -82,9 +82,11 @@ public struct ExportedFiles {
         guard !annotatedPNG.isEmpty, annotatedPNG.count <= 24_000_000 else { throw WhittleError.messageTooLarge }
         let exportDirectory = directory.appendingPathComponent(document.id.uuidString).appendingPathComponent("r\(document.revision)")
         try FileManager.default.createDirectory(at: exportDirectory, withIntermediateDirectories: true)
-        image = exportDirectory.appendingPathComponent("Whittle.png")
-        notes = exportDirectory.appendingPathComponent("Whittle.md")
+        let basename = "Whittle-\(document.id.uuidString.prefix(8))-r\(document.revision)"
+        image = exportDirectory.appendingPathComponent(basename + ".png")
+        notes = exportDirectory.appendingPathComponent(basename + ".md")
         try annotatedPNG.write(to: image, options: .atomic)
-        try document.markdown.write(to: notes, atomically: true, encoding: .utf8)
+        let markdown = document.markdown + "\nAnnotated image: [\(image.lastPathComponent)](\(image.lastPathComponent))\n"
+        try markdown.write(to: notes, atomically: true, encoding: .utf8)
     }
 }

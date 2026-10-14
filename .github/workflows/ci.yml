@@ -41,6 +41,8 @@ jobs:
           -destination 'platform=macOS' -derivedDataPath build/Mac
           -resultBundlePath build/MacTests.xcresult
           -parallel-testing-enabled NO
+          -test-timeouts-enabled YES -default-test-execution-time-allowance 120
+          -maximum-test-execution-time-allowance 180
           CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM= test
       - name: Build universal Mac release
         run: >-
@@ -68,7 +70,9 @@ jobs:
           xcodebuild -project Whittle.xcodeproj -scheme WhittlePad
           -destination 'platform=iOS Simulator,name=iPad Pro 11-inch (M5),OS=26.5'
           -derivedDataPath build/iPad -resultBundlePath build/iPadTests.xcresult
-          -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO test
+          -parallel-testing-enabled NO -test-timeouts-enabled YES
+          -default-test-execution-time-allowance 120 -maximum-test-execution-time-allowance 180
+          CODE_SIGNING_ALLOWED=NO test
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:

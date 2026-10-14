@@ -47,7 +47,8 @@ Screen Recording grants caused by unstable signatures or changing app paths.
    or type. Drag an existing note to move it; tap it to edit. Undo and redo apply
    to annotations.
 6. Tap Copy on the iPad. The Mac clipboard receives **two actual files**:
-   `Whittle.png` and `Whittle.md`. Paste them into your agent, or drag the feedback
+   a PNG and a Markdown file with matching capture and revision names. The notes
+   reference the corresponding image. Paste them into your agent, or drag the feedback
    card from the Mac menu panel.
 
 Captures queue without replacing an active screenshot. Annotations save locally
