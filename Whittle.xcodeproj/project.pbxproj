@@ -11,6 +11,7 @@
 		0E13E9D2AB43BAB2D0BEC7DF /* ScreenshotLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */; };
 		13034C540ED2AFF65EA8C3C4 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 480B8B71861A188B44AD4EF5 /* SnapshotTesting */; };
 		270A4E07101E5A1EA9FF8ACC /* MacMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF8042C39987EAC8E23445 /* MacMenuView.swift */; };
+		279A7FB75AF22FE01D4B610A /* ScreenshotLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807DC6E1DDF5645392A061F /* ScreenshotLibrary.swift */; };
 		30D97056D93FCC6397C899DF /* DemoScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A326455888FD43E86E8FEB /* DemoScreenshot.swift */; };
 		3D9E00C63C0BF36B6AB1BF1A /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20654AE030C246A3CED8FDA /* MacSettingsView.swift */; };
 		3FC7545653470E1928F511D4 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659D5ACCFAD346AD3192B89C /* GlobalShortcuts.swift */; };
@@ -21,6 +22,7 @@
 		622AA0B63BBBE4D8C15A458D /* AnnotationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC40C95142D30A011B4A6D82 /* AnnotationRenderer.swift */; };
 		6438C5E4AEE683C13D957CB7 /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20654AE030C246A3CED8FDA /* MacSettingsView.swift */; };
 		67B94E0AC964E6B650F4BAD0 /* ThirdPartyNotices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72535094A9BC6AEBCD7513FE /* ThirdPartyNotices.txt */; };
+		6B8B51E84D5EBD2C72533255 /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCF49E09381A40F02ADF98 /* CanvasController.swift */; };
 		6BD97184FC4D388CB0D8FA46 /* RegionCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DA3F47A635B88006A2719 /* RegionCapture.swift */; };
 		6D2E4EC75647A46F5AC3886D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FAC5B4B0CDC10216F08A79 /* Assets.xcassets */; };
 		71C46AD5790B069BBE6C4792 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4FD98CEAAAB2FBD23ED55 /* QRScanner.swift */; };
@@ -59,6 +61,7 @@
 		EAAE75D678929208953F3FB5 /* ScreenPermissionGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A93DF979E2136FDCFA4C28 /* ScreenPermissionGuide.swift */; };
 		F4C069B3B37FF68A89F8F0EE /* FileClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026B38113EF1E67D468E2D3 /* FileClipboard.swift */; };
 		F8B0020693A5D9EF4C1929B5 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCD93F04DAA350C601304C0 /* KeyboardShortcuts */; };
+		FA8C59DE274547BF796D1B3A /* CanvasHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC9D1837EE63DB65296719 /* CanvasHistoryTests.swift */; };
 		FDA5B428CEE66E86D788D256 /* WhittleCore in Frameworks */ = {isa = PBXBuildFile; productRef = A6EA8910F58B17DCB14AC2C2 /* WhittleCore */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +89,7 @@
 		0D5EA401346DF29FA6476687 /* WhittleMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhittleMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B94631D9BDCA746073798D /* PadWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadWorkspaceView.swift; sourceTree = "<group>"; };
 		1BBAA259D05EF4F86F1E5B4C /* WhittlePadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhittlePadApp.swift; sourceTree = "<group>"; };
+		2CBC9D1837EE63DB65296719 /* CanvasHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasHistoryTests.swift; sourceTree = "<group>"; };
 		3026B38113EF1E67D468E2D3 /* FileClipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileClipboard.swift; sourceTree = "<group>"; };
 		41EC8F6ADDEAF3A9A5FF0FB8 /* MacModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacModel.swift; sourceTree = "<group>"; };
 		44A326455888FD43E86E8FEB /* DemoScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoScreenshot.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				AB20464A94C830B27FE5671F /* AnnotationRendererTests.swift */,
+				2CBC9D1837EE63DB65296719 /* CanvasHistoryTests.swift */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -549,6 +554,9 @@
 			files = (
 				622AA0B63BBBE4D8C15A458D /* AnnotationRenderer.swift in Sources */,
 				8A9979DB4ED5524B762BBAA1 /* AnnotationRendererTests.swift in Sources */,
+				6B8B51E84D5EBD2C72533255 /* CanvasController.swift in Sources */,
+				FA8C59DE274547BF796D1B3A /* CanvasHistoryTests.swift in Sources */,
+				279A7FB75AF22FE01D4B610A /* ScreenshotLibrary.swift in Sources */,
 				893DE2F582686F392FEE84A7 /* WhittleTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

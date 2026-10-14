@@ -140,7 +140,7 @@ final class CanvasWorkspaceView: UIView, UIGestureRecognizerDelegate, PKCanvasVi
 
     func commitInk() {
         guard !configuring, document != nil else { return }
-        let data = inkView.drawing.dataRepresentation()
+        let data = inkView.drawing.strokes.isEmpty ? Data() : inkView.drawing.dataRepresentation()
         guard data != appliedInk else { return }
         appliedInk = data
         onEdit? { $0.ink = data }

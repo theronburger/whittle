@@ -8,7 +8,7 @@ public enum PeerSecurity {
         let options = tls.securityProtocolOptions
         sec_protocol_options_set_min_tls_protocol_version(options, .TLSv12)
         sec_protocol_options_set_max_tls_protocol_version(options, .TLSv12)
-        sec_protocol_options_append_tls_ciphersuite(options, tls_ciphersuite_t(rawValue: TLS_PSK_WITH_AES_128_GCM_SHA256)!)
+        sec_protocol_options_append_tls_ciphersuite(options, tls_ciphersuite_t(rawValue: UInt16(TLS_PSK_WITH_AES_128_GCM_SHA256))!)
         let key = ticket.secret.withUnsafeBytes { DispatchData(bytes: $0) }
         let identity = Data(ticket.hostID.uuidString.utf8).withUnsafeBytes { DispatchData(bytes: $0) }
         sec_protocol_options_add_pre_shared_key(options, key as __DispatchData, identity as __DispatchData)
@@ -38,6 +38,9 @@ public final class PeerConnection: @unchecked Sendable {
     public func start() {
         connection.stateUpdateHandler = { [weak self] state in
             guard let self else { return }
+            #if DEBUG
+            print("Whittle connection: \(state)")
+            #endif
             self.onState?(state)
             if case .ready = state { self.receiveHeader() }
         }

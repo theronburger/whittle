@@ -89,7 +89,9 @@ targets:
       - path: Tests/iPad
         excludes: [__Snapshots__]
       - Apps/iPad/AnnotationRenderer.swift
+      - Apps/iPad/CanvasController.swift
       - Apps/Shared/WhittleTheme.swift
+      - Apps/Shared/ScreenshotLibrary.swift
     dependencies:
       - package: WhittleCore
       - package: SnapshotTesting

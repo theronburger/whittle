@@ -42,6 +42,11 @@ jobs:
           -resultBundlePath build/MacTests.xcresult
           -parallel-testing-enabled NO
           CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM= test
+      - name: Build universal Mac release
+        run: >-
+          xcodebuild -project Whittle.xcodeproj -scheme WhittleMac
+          -configuration Release -destination 'generic/platform=macOS'
+          -derivedDataPath build/MacRelease CODE_SIGNING_ALLOWED=NO build
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
