@@ -46,12 +46,19 @@ else
 fi
 installed="$HOME/Applications/Whittle.app"
 python3 scripts/check-signing.py "$candidate" "$installed"
-python3 - "$installed" <<'PYTHON'
+mkdir -p "$HOME/Applications"
+staging_directory=$(mktemp -d "$HOME/Applications/.whittle-install.XXXXXXXX")
+ditto "$candidate" "$staging_directory/Whittle.app"
+codesign --verify --deep --strict "$staging_directory/Whittle.app"
+python3 - "$installed" "$staging_directory" <<'PYTHON'
 import subprocess
 import sys
 import os
 import time
-executable = sys.argv[1] + '/Contents/MacOS/Whittle'
+from pathlib import Path
+installed = Path(sys.argv[1])
+staging_directory = Path(sys.argv[2])
+executable = str(installed / 'Contents/MacOS/Whittle')
 for line in subprocess.check_output(['ps', '-axo', 'pid=,comm='], text=True).splitlines():
     process = line.strip().split(maxsplit=1)
     if len(process) == 2 and process[1] == executable:
@@ -62,7 +69,13 @@ for line in subprocess.check_output(['ps', '-axo', 'pid=,comm='], text=True).spl
             except ProcessLookupError: break
             time.sleep(0.1)
         else: raise SystemExit('Whittle did not quit. Close it before installing the update.')
+previous = staging_directory / 'Previous.app'
+if installed.exists(): installed.rename(previous)
+try:
+    (staging_directory / 'Whittle.app').rename(installed)
+except OSError:
+    if previous.exists() and not installed.exists(): previous.rename(installed)
+    raise
+if previous.exists(): print(f'Previous app retained for rollback: {previous}')
 PYTHON
-mkdir -p "$HOME/Applications"
-ditto "$candidate" "$installed"
 open --stdout "$(pwd)/build/MacConsole.log" --stderr "$(pwd)/build/MacConsole.log" "$installed"

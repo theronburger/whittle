@@ -42,6 +42,9 @@ This uses Developer ID signing for direct distribution, without publishing to
 the App Store. Subsequent installs must use the same signing route. Switching
 from Apple Development signing can require approving Keychain access and granting
 Screen Recording again; the installer stops unexpected identity changes.
+It waits for notarization, exports into a fresh directory, and replaces the whole
+app bundle after verification. The previous app is kept in a hidden installation
+folder under `~/Applications` for rollback.
 
 ## Use
 
