@@ -21,9 +21,10 @@ PYTHON
   xcodebuild -exportArchive -archivePath "$archive" \
     -exportOptionsPlist build/DeveloperID-ExportOptions.plist \
     -exportPath build/DeveloperID-Submission -allowProvisioningUpdates
+  export_directory=$(mktemp -d "$(pwd)/build/DeveloperID-Notarized.XXXXXXXX")
   for attempt in {1..120}; do
     if notarization_result=$(xcodebuild -exportNotarizedApp -archivePath "$archive" \
-      -exportPath build/DeveloperID-Notarized -allowProvisioningUpdates 2>&1); then
+      -exportPath "$export_directory" -allowProvisioningUpdates 2>&1); then
       printf '%s\n' "$notarization_result"
       break
     fi
@@ -34,7 +35,7 @@ PYTHON
     printf 'Waiting for Apple notarization (%s/120)…\n' "$attempt"
     sleep 15
   done
-  candidate="$(pwd)/build/DeveloperID-Notarized/Whittle.app"
+  candidate="$export_directory/Whittle.app"
   xcrun stapler validate "$candidate"
   spctl --assess --type execute "$candidate"
 else
