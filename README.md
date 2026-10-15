@@ -35,6 +35,17 @@ at `~/Applications/Whittle.app`, checks that the signing identity still matches,
 and waits for the old process to exit before replacing it. This avoids repeated
 Screen Recording grants caused by unstable signatures or changing app paths.
 
+On a managed Mac that automatically allows trusted downloaded apps, use
+`./scripts/install-mac.sh --developer-id` to archive, sign through the configured
+Xcode account, submit to Apple's notary service, and install the notarized build.
+This uses Developer ID signing for direct distribution, without publishing to
+the App Store. Subsequent installs must use the same signing route. Switching
+from Apple Development signing can require approving Keychain access and granting
+Screen Recording again; the installer stops unexpected identity changes.
+It waits for notarization, exports into a fresh directory, and replaces the whole
+app bundle after verification. The previous app is kept in a hidden installation
+folder under `~/Applications` for rollback.
+
 ## Use
 
 1. Open Whittle on the Mac. Open its menu bar icon and settings to show the QR.
