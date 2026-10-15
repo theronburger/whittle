@@ -1,11 +1,37 @@
 #!/bin/bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
+if [[ $# -gt 1 || ( $# -eq 1 && "$1" != "--developer-id" ) ]]; then
+  echo 'Usage: scripts/install-mac.sh [--developer-id]' >&2
+  exit 2
+fi
 xcodegen generate
-xcodebuild -project Whittle.xcodeproj -scheme WhittleMac \
-  -destination 'platform=macOS' -derivedDataPath build/SignedMac \
-  -allowProvisioningUpdates build
-candidate="$(pwd)/build/SignedMac/Build/Products/Debug/Whittle.app"
+if [[ "${1:-}" == "--developer-id" ]]; then
+  archive="$(pwd)/build/Archives/WhittleMac.xcarchive"
+  xcodebuild -project Whittle.xcodeproj -scheme WhittleMac \
+    -configuration Release -destination 'generic/platform=macOS' \
+    -derivedDataPath build/ArchiveMac -archivePath "$archive" \
+    -allowProvisioningUpdates archive
+  python3 - <<'PYTHON'
+import pathlib
+import plistlib
+options = {'method': 'developer-id', 'signingStyle': 'automatic', 'destination': 'upload'}
+pathlib.Path('build/DeveloperID-ExportOptions.plist').write_bytes(plistlib.dumps(options))
+PYTHON
+  xcodebuild -exportArchive -archivePath "$archive" \
+    -exportOptionsPlist build/DeveloperID-ExportOptions.plist \
+    -exportPath build/DeveloperID-Submission -allowProvisioningUpdates
+  xcodebuild -exportNotarizedApp -archivePath "$archive" \
+    -exportPath build/DeveloperID-Notarized -allowProvisioningUpdates
+  candidate="$(pwd)/build/DeveloperID-Notarized/Whittle.app"
+  xcrun stapler validate "$candidate"
+  spctl --assess --type execute "$candidate"
+else
+  xcodebuild -project Whittle.xcodeproj -scheme WhittleMac \
+    -destination 'platform=macOS' -derivedDataPath build/SignedMac \
+    -allowProvisioningUpdates build
+  candidate="$(pwd)/build/SignedMac/Build/Products/Debug/Whittle.app"
+fi
 installed="$HOME/Applications/Whittle.app"
 python3 scripts/check-signing.py "$candidate" "$installed"
 python3 - "$installed" <<'PYTHON'
